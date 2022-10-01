@@ -40,8 +40,10 @@
 
 \newcounter{questao}
 \setcounter{questao}{1} 
+\definecolor{qgray}{gray}{0.85}
 \newcommand{\questao}{
-  \noindent\textbf{QUESTÃO \arabic{questao}}
+  \noindent\textbf{\footnotesize QUESTÃO \arabic{questao}}
+  \textcolor{qgray}{\hspace{2ex}\leaders\vrule height 8pt depth -0.1pt \hfill \null}
   \par
   \vspace{-8pt}
   \noindent\rule[3pt]{\columnwidth}{1pt}
