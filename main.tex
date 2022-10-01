@@ -1,0 +1,42 @@
+\documentclass[12pt,a4paper,twoside, twocolumns]{article}
+%\usepackage[showframe]{geometry}
+\usepackage[]{geometry}
+\usepackage{lastpage}
+\usepackage[utf8]{inputenc}
+
+\usepackage{lmodern}			    % Troca a fonte
+\renewcommand*{\familydefault}{\sfdefault}
+
+\usepackage{lipsum} % for some dummy text
+
+\usepackage{graphicx}           % imagens
+
+\usepackage{fancyhdr}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[C]{\includegraphics[height=8mm]{images/logo-simulado.png}}
+
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage~de~\pageref{LastPage}}
+\fancyfoot[C]{Simulado Emancipa - Caderno único}
+\fancyfoot[RE,LO]{\includegraphics[height=12pt]{images/logo-simulado.png}}
+
+\section{Introduction}
+\lipsum[4]
+
+\lipsum[3]
+
+\lipsum[7]
+
+\lipsum[8]
+
+\lipsum[1]
+
+\lipsum[9]
+
+\lipsum[6]
+
+\end{document}
