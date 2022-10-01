@@ -7,15 +7,20 @@
 %% NOTA: o uso das margens aqui (margens diferentes p/ frente e verso) está meio que assumindo que a primeira página é uma página da frente, e que o caderno seria grampeado na lateral inteira (tipo o do ENEM). Se só for grampeado na ponta, as margens seriam diferentes.
 \usepackage[top=2cm, bottom=2cm, left=1.5cm, right=1.2cm]{geometry}
 
+
 %% Separador entre colunas
 \setlength{\columnseprule}{0.4pt}
 \setlength{\columnsep}{6mm}
+
+%%% Varias colunas
+\usepackage{multicol}
 
 %%% Referência à última página
 \usepackage{lastpage}
 
 %%% Fonte sem serifa
 \usepackage{lmodern}
+\usepackage{sansmathfonts}
 \renewcommand*{\familydefault}{\sfdefault}
 
 %%% Imagens
@@ -45,9 +50,11 @@
   \noindent\textbf{\footnotesize QUESTÃO \arabic{questao}}
   \textcolor{qgray}{\hspace{2ex}\leaders\vrule height 8pt depth -0.1pt \hfill \null}
   \par
+  \nopagebreak
   \vspace{-8pt}
   \noindent\rule[3pt]{\columnwidth}{1pt}
   \stepcounter{questao}
+  \nopagebreak
 }
 
 % Circula alguma letra
@@ -75,61 +82,23 @@
   \end{enumerate}
 }
 
+% Citação
+\newcommand{\citacao}[2]{
+    #1
+    \vspace{-1ex}
+    \begin{flushright}
+    \scriptsize
+    #2
+    \end{flushright}
+}
+
 \usepackage{lipsum} % for some dummy text
 
 \begin{document}
 
-\questao
-\lipsum[4]
-\begin{alternativas}
-  \item \lipsum[1][1]
-  \item \lipsum[1][2]
-  \item \lipsum[1][3]
-  \item \lipsum[1][4]
-\end{alternativas}
+\input{subareas/linguagens}
+\input{subareas/ciencias_humanas}
+\input{subareas/ciencias_natureza}
+\input{subareas/matematica}
 
-\questao
-\lipsum[8]
-\begin{alternativas}
-  \item \lipsum[9][1]
-  \item \lipsum[9][2]
-  \item \lipsum[9][3]
-  \item \lipsum[9][4]
-\end{alternativas}
-
-\questao
-\lipsum[4]
-\begin{alternativas}
-  \item \lipsum[2][1]
-  \item \lipsum[3][2]
-  \item \lipsum[8][3]
-  \item \lipsum[3][4]
-\end{alternativas}
-
-\questao
-\lipsum[4]
-\begin{alternativas}
-  \item \lipsum[1][1]
-  \item \lipsum[1][2]
-  \item \lipsum[1][3]
-  \item \lipsum[1][4]
-\end{alternativas}
-
-\questao
-\lipsum[8]
-\begin{alternativas}
-  \item \lipsum[9][1]
-  \item \lipsum[9][2]
-  \item \lipsum[9][3]
-  \item \lipsum[9][4]
-\end{alternativas}
-
-\questao
-\lipsum[4]
-\begin{alternativas}
-  \item \lipsum[2][1]
-  \item \lipsum[3][2]
-  \item \lipsum[8][3]
-  \item \lipsum[3][4]
-\end{alternativas}
 \end{document}
