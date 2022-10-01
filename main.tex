@@ -34,53 +34,95 @@
 \fancyfoot[C]{\small Simulado Emancipa -- Caderno único}
 \fancyfoot[RE,LO]{\small \includegraphics[height=12pt]{images/logo-simulado.png}}
 
+%%% Questão
+\usepackage{enumitem}
+\usepackage{tikz}
+
+\newcounter{questao}
+\setcounter{questao}{1} 
+\newcommand{\questao}{
+  \noindent\textbf{QUESTÃO \arabic{questao}}
+  \par
+  \vspace{-8pt}
+  \noindent\rule[3pt]{\columnwidth}{1pt}
+  \stepcounter{questao}
+}
+
+% Circula alguma letra
+\newcommand*{\circled}[1]{%
+  \tikz[baseline=(char.base)]{
+    \node[
+      shape=circle,
+      fill,
+      text=white,
+      font=\bfseries,
+      inner sep=1pt
+    ] (char) {#1};
+  }
+}
+
+% Alternativas
+\newenvironment{alternativas}{%
+\begin{enumerate}[label=\protect\circled{\footnotesize\Alph*}]
+}{%
+\end{enumerate}
+}
+
 \usepackage{lipsum} % for some dummy text
 
 \begin{document}
 
-\section{Introdution}
+\questao
 \lipsum[4]
+\begin{alternativas}
+  \item \lipsum[1][1]
+  \item \lipsum[1][2]
+  \item \lipsum[1][3]
+  \item \lipsum[1][4]
+\end{alternativas}
 
-\lipsum[3]
-
-\lipsum[7]
-
+\questao
 \lipsum[8]
+\begin{alternativas}
+  \item \lipsum[9][1]
+  \item \lipsum[9][2]
+  \item \lipsum[9][3]
+  \item \lipsum[9][4]
+\end{alternativas}
 
-\lipsum[1]
-
-\lipsum[9]
-
-\lipsum[6]
-
-\lipsum[8]
-
-\lipsum[1]
-
-\lipsum[9]
-
-\lipsum[6]
-
+\questao
 \lipsum[4]
+\begin{alternativas}
+  \item \lipsum[2][1]
+  \item \lipsum[3][2]
+  \item \lipsum[8][3]
+  \item \lipsum[3][4]
+\end{alternativas}
 
-\lipsum[3]
+\questao
+\lipsum[4]
+\begin{alternativas}
+  \item \lipsum[1][1]
+  \item \lipsum[1][2]
+  \item \lipsum[1][3]
+  \item \lipsum[1][4]
+\end{alternativas}
 
-\lipsum[7]
-
+\questao
 \lipsum[8]
+\begin{alternativas}
+  \item \lipsum[9][1]
+  \item \lipsum[9][2]
+  \item \lipsum[9][3]
+  \item \lipsum[9][4]
+\end{alternativas}
 
-\lipsum[1]
-
-\lipsum[9]
-
-\lipsum[6]
-
-\lipsum[8]
-
-\lipsum[1]
-
-\lipsum[9]
-
-\lipsum[6]
-
+\questao
+\lipsum[4]
+\begin{alternativas}
+  \item \lipsum[2][1]
+  \item \lipsum[3][2]
+  \item \lipsum[8][3]
+  \item \lipsum[3][4]
+\end{alternativas}
 \end{document}
