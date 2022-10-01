@@ -56,16 +56,21 @@
       fill,
       text=white,
       font=\bfseries,
-      inner sep=1pt
+      inner sep=0.5pt
     ] (char) {#1};
   }
 }
 
 % Alternativas
 \newenvironment{alternativas}{%
-\begin{enumerate}[label=\protect\circled{\footnotesize\Alph*}]
-}{%
-\end{enumerate}
+  \begin{enumerate}[
+    label=\protect\circled{\scriptsize\Alph*},
+    leftmargin=8mm,
+    itemsep=-3pt,
+    topsep=1ex
+    ]
+  }{%
+  \end{enumerate}
 }
 
 \usepackage{lipsum} % for some dummy text
