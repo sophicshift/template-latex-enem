@@ -1,35 +1,75 @@
-\documentclass[12pt,a4paper,twoside, twocolumns]{article}
-%\usepackage[showframe]{geometry}
-\usepackage[]{geometry}
-\usepackage{lastpage}
-\usepackage[utf8]{inputenc}
+\documentclass[12pt,a4paper,twoside,twocolumn]{article}
 
-\usepackage{lmodern}			    % Troca a fonte
+%% isso ficou obsoleto -- desde 2020 o compilador usa utf8
+% \usepackage[utf8]{inputenc}
+
+%% Margens
+\usepackage[top=2cm, bottom=2cm, left=1.2cm, right=2cm]{geometry}
+
+%%% Referência à última página
+\usepackage{lastpage}
+
+%%% Fonte sem serifa
+\usepackage{lmodern}
 \renewcommand*{\familydefault}{\sfdefault}
 
-\usepackage{lipsum} % for some dummy text
+%%% Imagens
+\usepackage{graphicx}
 
-\usepackage{graphicx}           % imagens
-
+%%% Cabeçalho e rodapé
 \usepackage{fancyhdr}
-
-\begin{document}
-
 \pagestyle{fancy}
+
+% Cabeçalho
 \fancyhead{}
 \fancyhead[C]{\includegraphics[height=8mm]{images/logo-simulado.png}}
 
+% Rodapé
 \fancyfoot{}
 \fancyfoot[LE,RO]{\thepage~de~\pageref{LastPage}}
-\fancyfoot[C]{Simulado Emancipa - Caderno único}
-\fancyfoot[RE,LO]{\includegraphics[height=12pt]{images/logo-simulado.png}}
+\fancyfoot[C]{\small Simulado Emancipa -- Caderno único}
+\fancyfoot[RE,LO]{\small \includegraphics[height=12pt]{images/logo-simulado.png}}
 
-\section{Introduction}
+\usepackage{lipsum} % for some dummy text
+
+\begin{document}
+
+\section{Introdution}
 \lipsum[4]
 
 \lipsum[3]
 
 \lipsum[7]
+
+\lipsum[8]
+
+\lipsum[1]
+
+\lipsum[9]
+
+\lipsum[6]
+
+\lipsum[8]
+
+\lipsum[1]
+
+\lipsum[9]
+
+\lipsum[6]
+
+\lipsum[4]
+
+\lipsum[3]
+
+\lipsum[7]
+
+\lipsum[8]
+
+\lipsum[1]
+
+\lipsum[9]
+
+\lipsum[6]
 
 \lipsum[8]
 
