@@ -1,0 +1,179 @@
+\documentclass[12pt,a4paper,twoside,twocolumn,table]{article}
+
+%% isso ficou obsoleto -- desde 2020 o compilador usa utf8
+% \usepackage[utf8]{inputenc}
+
+%% Margens
+%% NOTA: o uso das margens aqui (margens diferentes p/ frente e verso) está meio que assumindo que a primeira página é uma página da frente, e que o caderno seria grampeado na lateral inteira (tipo o do ENEM). Se só for grampeado na ponta, as margens seriam diferentes.
+\usepackage[top=2cm, bottom=2cm, left=1.3cm, right=1.3cm]{geometry}
+\usepackage[brazil]{babel}
+
+
+%%% Cabeçalho e rodapé
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\includegraphics[height=8mm]{images/logo-simulado.png}}
+
+%%% Varias colunas
+\usepackage{multicol}
+
+%%% Referência à última página
+\usepackage{lastpage}
+
+%%% Fonte sem serifa
+\usepackage{lmodern}
+\usepackage{sansmathfonts}
+\renewcommand*{\familydefault}{\sfdefault}
+
+%%% Imagens
+\usepackage{graphicx}
+
+%%% Questão
+\usepackage{enumitem}
+\usepackage{tikz}
+
+\usepackage{import}
+
+\begin{document}
+ 
+\onecolumn
+
+\newcommand*{\gcircled}[1]{%
+  \tikz[baseline=(char.base)]{
+    \node[
+      shape=circle,
+      draw,
+      inner sep=0.5pt
+    ] (char) {#1};
+  }
+}
+
+\newcommand\thing{
+  
+  \setlength{\tabcolsep}{5pt}
+  \begin{tabular}{m{2pt}|c}
+    \hspace*{-2ex}\raggedleft
+    {\footnotesize \the\numexpr \value{gabacol}*20 + \value{gabarow} + 1} &%
+    \setlength{\tabcolsep}{0pt}%
+    \begin{tabular}{ccccc}
+      \gcircled{\scriptsize A} &
+      \gcircled{\scriptsize B} &
+      \gcircled{\scriptsize C} &
+      \gcircled{\scriptsize D} & 
+      \gcircled{\scriptsize E}%
+    \end{tabular}%
+    \hspace*{-2ex}
+  \end{tabular}
+  \stepcounter{gabacol}
+}
+
+\newcommand{\ghead}{\scriptsize \textbf{QUESTÃO/RESPOSTA}}
+\newcounter{gabarow}
+\newcounter{gabacol}[gabarow]
+
+{
+  \setlength{\tabcolsep}{0pt}
+  \setlength\arrayrulewidth{2pt}
+  \begin{tabular}{r}
+    \huge CARTÃO-RESPOSTA
+    \\ \hline
+    \scriptsize SIMULADO DO EXAME NACIONAL DO ENSINO MÉDIO
+  \end{tabular}
+}
+
+\bigskip
+\begin{center}
+  \noindent\textbf{\small Nome completo:}\\
+  {
+    \setlength{\tabcolsep}{0pt}
+    \newlength{\nwid}
+    \setlength{\nwid}{5mm}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{|m\nwid|m\nwid|m\nwid|m\nwid|m\nwid|m\nwid|m\nwid|m\nwid|m\nwid|m\nwid|m\nwid|m\nwid|m\nwid|m\nwid|m\nwid|m\nwid|m\nwid|m\nwid|m\nwid|m\nwid|m\nwid|m\nwid|}
+      \hline &&&&&&&&&&&&&&&&&&&&& \\
+      \hline &&&&&&&&&&&&&&&&&&&&& \\
+      \hline
+    \end{tabular}
+  }
+\end{center}
+
+\bigskip
+\begin{center}
+  \large
+  \textbf{INSTRUÇÕES}
+\end{center}
+
+\begin{multicols}{2}
+  \footnotesize
+  \raggedright
+  \begin{enumerate}[noitemsep, topsep=1ex]
+    \item Preencha o seu nome completo, com letras de forma, a sua data de nascimento e a sua cidade. Sua série a turma e o número (Se for aluno regularmente matriculado em alguma unidade do Sistema equipe de Ensino).
+    \item Transcreva a frase apresentada na \textbf{CAPA DO SEU CADERNO DE QUESTÕES} no local abaixo indicado.
+    \item Não haverá substituição do \textbf{CARTÃO-RESPOSTA}, por isso tenha muita atenção durante a marcação das alternativas.
+    \item Em hipótese alguma, você devera deixar a sala de aplicação do exame portando o \textbf{CARTÃO-RESPOSTA}.
+    \item O \textbf{CARTÃO-RESPOSTA/FOLHA DE REDAÇÃO} é o único documento que será utilizado para a correção de suas provas. Não o amasse, não o dobre, nem o rasure. O preenchimento deve ser feito com caneta esferográfica de tinta preta fabricada em material transparente. Não utilize caneta de outra cor, lápis ou lapiseira.
+  \end{enumerate}
+\end{multicols}
+
+\arrayrulecolor{gray!40}
+\begin{center}
+  \setlength{\tabcolsep}{0pt}
+  \setlength\arrayrulewidth{2pt}
+  \begin{tabular}{|l|m{0.6\linewidth}|}
+    \hline
+    \colorbox{gray!15}{
+    \parbox{0.35\linewidth}{
+    \scriptsize\raggedright
+    ATENÇÃO: TRANSCREVA AQUI COM A SUA CALIGRAFIA USUAL, A FRASE APRESENTADA NA CAPA DO SEU CADERNO DE QUESTÕES CONFORME AS INSTRUÇÕES NELA CONTIDAS.
+    }
+    } &  \\ \hline
+  \end{tabular}
+\end{center}
+
+\arrayrulecolor{black}
+\begin{center}
+\noindent\colorbox{gray!15}{
+    \begin{tabular}{m{0.57\linewidth}m{0.35\linewidth}}
+      \small\raggedright
+      Para todas as marcações neste \textbf{CARTÃO-RESPOSTA}, preencha os
+      círculos completamente e com nitidez, utilizando \textbf{caneta esferográfica de tinta preta fabricada em material transparente}, conforme na ilustração.
+     &
+    \resizebox{0.35\textwidth}{!}{\import{images/}{preenchimento.pdf_tex}}
+    \end{tabular}
+}
+\end{center}
+
+\hrule
+
+\rowcolors{2}{gray!25}{white}
+\begin{center}
+\begin{tabular}{|c||c||c||c||c|}\hline
+  \rowcolor{gray!25}
+  \ghead & \ghead & \ghead & \ghead & \ghead \\ \hline
+  \thing & \thing & \thing & \thing & \thing \stepcounter{gabarow}\\ \hline
+  \thing & \thing & \thing & \thing & \thing \stepcounter{gabarow}\\ \hline
+  \thing & \thing & \thing & \thing & \thing \stepcounter{gabarow}\\ \hline
+  \thing & \thing & \thing & \thing & \thing \stepcounter{gabarow}\\ \hline
+  \thing & \thing & \thing & \thing & \thing \stepcounter{gabarow}\\ \hline
+  \thing & \thing & \thing & \thing & \thing \stepcounter{gabarow}\\ \hline
+  \thing & \thing & \thing & \thing & \thing \stepcounter{gabarow}\\ \hline
+  \thing & \thing & \thing & \thing & \thing \stepcounter{gabarow}\\ \hline
+  \thing & \thing & \thing & \thing & \thing \stepcounter{gabarow}\\ \hline
+  \thing & \thing & \thing & \thing & \thing \stepcounter{gabarow}\\ \hline
+  \thing & \thing & \thing & \thing & \thing \stepcounter{gabarow}\\ \hline
+  \thing & \thing & \thing & \thing & \thing \stepcounter{gabarow}\\ \hline
+  \thing & \thing & \thing & \thing & \thing \stepcounter{gabarow}\\ \hline
+  \thing & \thing & \thing & \thing & \thing \stepcounter{gabarow}\\ \hline
+  \thing & \thing & \thing & \thing & \thing \stepcounter{gabarow}\\ \hline
+  \thing & \thing & \thing & \thing & \thing \stepcounter{gabarow}\\ \hline
+  \thing & \thing & \thing & \thing & \thing \stepcounter{gabarow}\\ \hline
+  \thing & \thing & \thing & \thing & \thing \stepcounter{gabarow}\\ \hline
+  \thing & \thing & \thing & \thing & \thing \stepcounter{gabarow}\\ \hline
+  \thing & \thing & \thing & \thing & \thing \\ \hline
+\end{tabular}
+\end{center}
+
+\end{document}
